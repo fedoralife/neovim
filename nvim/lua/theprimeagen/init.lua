@@ -52,9 +52,9 @@ autocmd('BufEnter', {
     group = ThePrimeagenGroup,
     callback = function()
         if vim.bo.filetype == "zig" then
-            vim.cmd.colorscheme("gruvbox")
+            vim.cmd.colorscheme("nordic")
         else
-            vim.cmd.colorscheme("gruvbox")
+            vim.cmd.colorscheme("nordic")
         end
     end
 })
