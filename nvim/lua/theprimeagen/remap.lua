@@ -1,6 +1,10 @@
 
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+-- Visual mode: Yank to both clipboard and default register
+vim.api.nvim_set_keymap('v', 'y', '"+y', { noremap = true, silent = true })
+-- Remap `yy` to yank to both clipboard and default register
+vim.api.nvim_set_keymap('n', 'yy', '"+yy', { noremap = true, silent = true })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -72,10 +76,5 @@ end)
 -- Remap Escape key to End key in Normal mode
 
 -- Remap the End key to Escape in all modes
-vim.api.nvim_set_keymap('', '<End>', '<Esc>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<End>', '<Esc>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('i', '<End>', '<Esc>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', '<End>', '<Esc>', { noremap = true, silent = true })
 -- Bind End key to save the current file
-vim.api.nvim_set_keymap('n', '<End>', ':w<CR>', { noremap = true, silent = true })
 
